@@ -1,7 +1,10 @@
 #pragma once
 
+#include "ofxUDPManager.h"
 #include "constParameter.h"
 #include "gifMgr.h"
+#include "config.h"
+
 class ofApp : public ofBaseApp{
 
 public:
@@ -12,6 +15,17 @@ public:
 	void keyPressed(int key);
 
 private:
-	gifMgr _gifMgr;
 	float _mainTimer;
+
+
+	config _config;
+	gifMgr _gifMgr;
+
+
+public:
+	void initUdp();
+	void checkUdp(float delta);
+private:
+	float _checkTimer;
+	ofxUDPManager _udpReceiver;
 };

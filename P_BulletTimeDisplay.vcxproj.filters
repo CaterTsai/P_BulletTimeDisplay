@@ -22,9 +22,6 @@
     <ClCompile Include="..\..\..\addons\ofxAnimatable\src\ofxAnimatableQueue.cpp">
       <Filter>addons\ofxAnimatable\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\addons\ofxGif\src\ofxGif.cpp">
-      <Filter>addons\ofxGif\src</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.cpp">
       <Filter>addons\ofxXmlSettings\src</Filter>
     </ClCompile>
@@ -40,6 +37,27 @@
     <ClCompile Include="src\gifMgr.cpp">
       <Filter>src\gifMgr</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGifDecoder\src\ofxGifDecoder.cpp">
+      <Filter>addons\ofxGifDecoder\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGifDecoder\src\ofxGifFile.cpp">
+      <Filter>addons\ofxGifDecoder\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxGifDecoder\src\ofxGifFrame.cpp">
+      <Filter>addons\ofxGifDecoder\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxTCPClient.cpp">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxTCPManager.cpp">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxTCPServer.cpp">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\addons\ofxNetwork\src\ofxUDPManager.cpp">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -54,12 +72,6 @@
     <Filter Include="addons\ofxAnimatable\src">
       <UniqueIdentifier>{9A0AF1AC-D8D7-DC08-0B38-3CC3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="addons\ofxGif">
-      <UniqueIdentifier>{D1712EA0-C6FD-3BD8-C65E-E5D9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="addons\ofxGif\src">
-      <UniqueIdentifier>{FECF32E4-4CD9-E7EE-0CE0-44E9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="addons\ofxXmlSettings">
       <UniqueIdentifier>{877F005D-13E6-0592-1D97-F2E3}</UniqueIdentifier>
     </Filter>
@@ -72,8 +84,20 @@
     <Filter Include="src\gifMgr">
       <UniqueIdentifier>{df2da2d5-a906-4e9b-8378-007f1b311bfe}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\gifMgr\threadGif">
-      <UniqueIdentifier>{b00b4f7e-9ca0-4c45-b41f-db2d8c5d674d}</UniqueIdentifier>
+    <Filter Include="addons\ofxGifDecoder">
+      <UniqueIdentifier>{294cec45-ceb9-4ee6-928b-cb2a1ee04e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxGifDecoder\src">
+      <UniqueIdentifier>{f47950e2-bf6a-44dd-aedb-245bb6dc7157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxNetwork">
+      <UniqueIdentifier>{633b7e55-0930-4ace-92f8-4cefee9f627c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxNetwork\src">
+      <UniqueIdentifier>{02eb5f09-144b-421d-9861-d195472fde11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\config">
+      <UniqueIdentifier>{ebad5757-7650-4e3c-adba-ba40fe054627}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -95,9 +119,6 @@
     <ClInclude Include="..\..\..\addons\ofxAnimatable\src\ofxAnimatableQueue.h">
       <Filter>addons\ofxAnimatable\src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\addons\ofxGif\src\ofxGif.h">
-      <Filter>addons\ofxGif\src</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\addons\ofxXmlSettings\src\ofxXmlSettings.h">
       <Filter>addons\ofxXmlSettings\src</Filter>
     </ClInclude>
@@ -110,8 +131,35 @@
     <ClInclude Include="src\constParameter.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\threadGif.h">
-      <Filter>src\gifMgr\threadGif</Filter>
+    <ClInclude Include="..\..\..\addons\ofxGifDecoder\src\ofxGifDecoder.h">
+      <Filter>addons\ofxGifDecoder\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGifDecoder\src\ofxGifFile.h">
+      <Filter>addons\ofxGifDecoder\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxGifDecoder\src\ofxGifFrame.h">
+      <Filter>addons\ofxGifDecoder\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxNetwork.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxNetworkUtils.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxTCPClient.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxTCPManager.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxTCPServer.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\addons\ofxNetwork\src\ofxUDPManager.h">
+      <Filter>addons\ofxNetwork\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\config.h">
+      <Filter>src\config</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

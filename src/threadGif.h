@@ -3,7 +3,7 @@
 #include "ofxGif.h"
 #include "ofMain.h"
 
-class threadGif : public ofxGIF::fiGifLoader {
+class threadGif : public ofxGIF::fiGifLoader, public ofThread{
 public:
 	threadGif() :
 		fiGifLoader()
@@ -13,12 +13,6 @@ public:
 	{}
 	void asynLoad(string filename) {
 		_isLoading = true;
-		thread t(
-			[&](string filename) {
-				load(filename);
-				_isWait = true;
-		}, filename);
-		t.detach();
 	}
 
 	bool update() {
@@ -41,4 +35,5 @@ public:
 private:
 	bool _isAllocation;
 	bool _isLoading, _isWait;
+	list<ofImage> _testPage;
 };
