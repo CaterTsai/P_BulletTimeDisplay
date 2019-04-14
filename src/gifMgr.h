@@ -25,7 +25,7 @@ private:
 	int _addIndex;
 	int _rowNum, _colNum;
 
-	ofImage _default;
+	array<ofImage, 2> _default;
 	ofxGifDecoder _gifLoader;
 	array<ofxGifFile, cGifNum> _gifContainer;
 	array<int, cGifNum> _gifOrder;

@@ -8,6 +8,9 @@ void ofApp::setup(){
 	_config.load();
 	initUdp();
 
+	_bg.load("BG.jpg");
+	_title.load("title.jpg");
+	ofSetWindowPosition(0, 0);
 	_mainTimer = ofGetElapsedTimef();
 
 }
@@ -27,7 +30,10 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-	_gifMgr.draw(360, 170);
+	ofSetColor(255);
+	_bg.draw(0, 0);
+	_title.draw(360, 345 - _title.getHeight());
+	_gifMgr.draw(360, 345);
 }
 
 //--------------------------------------------------------------

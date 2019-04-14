@@ -16,7 +16,7 @@ public:
 
 private:
 	float _mainTimer;
-
+	ofImage _bg, _title;
 
 	config _config;
 	gifMgr _gifMgr;

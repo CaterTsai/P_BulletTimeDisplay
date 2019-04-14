@@ -9,10 +9,11 @@ gifMgr::gifMgr()
 	, _animIdx(-1)
 	, _eState(eAnimFinish)
 {
-	_default.load("default.jpg");
-	_unitW = 119;
+	_default[0].load("d1.jpg");
+	_default[1].load("d2.jpg");
+	_unitW = 120;
 	_unitH = _unitW / 1.5f;
-	_intervalW = _intervalH = 1;
+	_intervalW = _intervalH = 0;
 
 	initOrder();
 	animInit();
@@ -66,7 +67,7 @@ void gifMgr::draw(int x, int y)
 				}
 				else
 				{
-					_default.draw(drawPos, _unitW, _unitH);
+					_default[(x + y) % 2].draw(drawPos, _unitW, _unitH);
 				}
 			}
 		}
@@ -115,7 +116,10 @@ void gifMgr::onGifOnload(ofxGifFile & gif)
 		setAnimation(_gifOrder[_addIndex], temp);
 	}
 	else {
-		setAnimation(_gifOrder[_addIndex], _default);
+		auto index = _gifOrder[_addIndex];
+		int y = (float)index / cGifCol;
+		int x = index % cGifCol;
+		setAnimation(_gifOrder[_addIndex], _default[(x + y) % 2]);
 	}
 	
 	
