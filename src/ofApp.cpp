@@ -2,16 +2,19 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	ofBackground(0);
+	ofBackground(13, 121, 59);
 	ofSetFrameRate(60);
 
 	_config.load();
 	initUdp();
 
-	_bg.load("BG.jpg");
-	_title.load("title.jpg");
+
 	ofSetWindowPosition(0, 0);
+
 	_mainTimer = ofGetElapsedTimef();
+
+	_isShowCursor = true;
+	ofHideCursor();
 
 }
 
@@ -19,7 +22,6 @@ void ofApp::setup(){
 void ofApp::update(){
 	float delta = ofGetElapsedTimef() - _mainTimer;
 	_mainTimer += delta;
-
 
 	checkUdp(delta);
 	_gifMgr.update(delta);
@@ -31,9 +33,8 @@ void ofApp::update(){
 void ofApp::draw(){
 
 	ofSetColor(255);
-	_bg.draw(0, 0);
-	_title.draw(360, 345 - _title.getHeight());
-	_gifMgr.draw(360, 345);
+
+	_gifMgr.draw(60, 220);
 }
 
 //--------------------------------------------------------------
@@ -43,6 +44,12 @@ void ofApp::keyPressed(int key){
 	case 'q':
 	{
 		_gifMgr.addNewGif("test.gif");
+		break;
+	}
+	case 'w':
+	{
+		_isShowCursor = !_isShowCursor;
+		_isShowCursor ? ofShowCursor() : ofHideCursor();
 		break;
 	}
 	}

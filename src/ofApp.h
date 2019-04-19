@@ -15,9 +15,9 @@ public:
 	void keyPressed(int key);
 
 private:
-	float _mainTimer;
+	float _mainTimer, _autoTimer;
 	ofImage _bg, _title;
-
+	bool _isShowCursor;
 	config _config;
 	gifMgr _gifMgr;
 

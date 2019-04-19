@@ -18,8 +18,10 @@ public:
 
 		port = xml.getValue("UdpPort", 2233);
 		gifFolderPath = xml.getValue("gifFolderPath", "");
+
 	}
 public:
 	int port;
 	string gifFolderPath;
+	ofVec2f windowPos;
 };

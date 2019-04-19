@@ -11,7 +11,7 @@ gifMgr::gifMgr()
 {
 	_default[0].load("d1.jpg");
 	_default[1].load("d2.jpg");
-	_unitW = 120;
+	_unitW = 180;
 	_unitH = _unitW / 1.5f;
 	_intervalW = _intervalH = 0;
 
@@ -114,6 +114,8 @@ void gifMgr::onGifOnload(ofxGifFile & gif)
 		ofImage temp;
 		temp.setFromPixels(frame.getRawPixels());
 		setAnimation(_gifOrder[_addIndex], temp);
+
+		_gifContainer[_gifOrder[_addIndex]].clear();
 	}
 	else {
 		auto index = _gifOrder[_addIndex];
@@ -121,8 +123,6 @@ void gifMgr::onGifOnload(ofxGifFile & gif)
 		int x = index % cGifCol;
 		setAnimation(_gifOrder[_addIndex], _default[(x + y) % 2]);
 	}
-	
-	
 	_gifContainer[_gifOrder[_addIndex]] = gif;
 	_addIndex = (_addIndex + 1) % _gifOrder.size();
 	_isLoad = false;
